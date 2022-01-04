@@ -23,7 +23,43 @@ urlFragment: ms-identity-docs-code-webapp-java
 
 This sample demonstrates a Java console application that accesses Microsoft Graph as itself by using the Microsoft Authentication Library (MSAL) for Java.
 
-![A screenshot showing the output of executing the command above, which is JSON from a Graph API call.](./output.png)
+```console
+user@console:~$ mvn exec:java -Dexec.mainClass=com.contoso.cli.App
+Graph API call result:
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
+  "id": "00000000-0000-0000-0000-000000000000",
+  "deletedDateTime": null,
+  "appId": "00000000-0000-0000-0000-000000000000",
+  "applicationTemplateId": null,
+  "disabledByMicrosoftStatus": null,
+  "createdDateTime": "2021-11-11T20:57:247",
+  "displayName": "java-cli",
+  "description": null,
+  "groupMembershipClaims": null,
+  "identifierUris": [],
+  "isDeviceOnlyAuthSupported": null,
+  "isFallbackPublicClient": null,
+  "notes": null,
+  "publisherDomain": "onmicrosoft.com",
+  "signInAudience": "Azure ADMyOrg",
+  "tags": [],
+  "tokenEncryptionKeyId": null,
+  "defaultRedirectUri": null,
+  "certification": null,
+  "optionalclaims": null,
+  "addins": [],
+  "api": {
+    "acceptMappedclaims": null,
+    "knownClientApplications": [],
+    "requestedAccessTokenVersion": null,
+    "oauth2PermissionScopes": [],
+    "preAuthorizedApplications": []
+  },
+  "appRoles": [],
+  …
+}
+```
 
 > :page_with_curl: This sample application backs one or more technical articles on docs.microsoft.com. <!-- TODO: Link to first tutorial in series when published. -->
 
@@ -41,12 +77,12 @@ First, complete the steps in [Register an application with the Microsoft identit
 
 Use these settings in your app registration.
 
-| App registration <br/> setting | Value for this sample app                                                    | Notes                                                                                              |
-|:------------------------------:|:-----------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|
-| **Name**                       | `java-cli`                                                                   | Suggested value for this sample. <br/> You can change the app name at any time.                    |
-| **Supported account types**    | **Accounts in this organizational directory only (Single tenant)**           | Suggested value for this sample.                                                                   |
-| **Platform type**              | _None_                                                                       | Required value for this sample. |
-| **Client secret**              | _**Value** of the client secret (not its ID)_                                | :warning: Record this value immediately! <br/> It's shown only _once_ (when you create it).        |
+| App registration <br/> setting | Value for this sample app                                              | Notes                                                                                          |
+|:------------------------------:|:-----------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------|
+| **Name**                       | `java-cli`                                                             | Suggested value for this sample. <br/> You can change the app name at any time.                |
+| **Supported account types**    | **Accounts in this organizational directory only (Single tenant)**     | Suggested value for this sample.                                                               |
+| **Platform type**              | _None_                                                                 | No redirect URI required; don't select a platform.                                             |
+| **Client secret**              | _**Value** of the client secret (not its ID)_                          | :warning: Record this value immediately! <br/> It's shown only _once_ (when you create it).    |
 
 > :information_source: **Bold text** in the tables above matches (or is similar to) a UI element in the Azure portal, while `code formatting` indicates a value you enter into a text box in the Azure portal.
 
@@ -61,7 +97,7 @@ authority=value-here
 # 'Application (client) ID' of app registration in Azure portal - this value is a GUID
 client-id=value-here
 
-# 'Object ID' of app registration in Azure portal - this value is a GUID
+# 'Object ID' of app registration in Azure portal - this value is a GUID. This is used for the Graph API call, not for MSAL authentication.
 client-object-id=value-here
 
 # Client secret 'Value' (not its ID) from 'Client secrets' in app registration in Azure portal
@@ -84,11 +120,46 @@ mvn exec:java -Dexec.mainClass=com.contoso.cli.App
 
 If everything worked, the sample app should produce output similar to this:
 
-![A screenshot showing the output of executing the command above, which is JSON from a Graph API call.](./output.png)
+```console
+Graph API call result:
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
+  "id": "00000000-0000-0000-0000-000000000000",
+  "deletedDateTime": null,
+  "appId": "00000000-0000-0000-0000-000000000000",
+  "applicationTemplateId": null,
+  "disabledByMicrosoftStatus": null,
+  "createdDateTime": "2021-11-11T20:57:247",
+  "displayName": "java-cli",
+  "description": null,
+  "groupMembershipClaims": null,
+  "identifierUris": [],
+  "isDeviceOnlyAuthSupported": null,
+  "isFallbackPublicClient": null,
+  "notes": null,
+  "publisherDomain": "onmicrosoft.com",
+  "signInAudience": "Azure ADMyOrg",
+  "tags": [],
+  "tokenEncryptionKeyId": null,
+  "defaultRedirectUri": null,
+  "certification": null,
+  "optionalclaims": null,
+  "addins": [],
+  "api": {
+    "acceptMappedclaims": null,
+    "knownClientApplications": [],
+    "requestedAccessTokenVersion": null,
+    "oauth2PermissionScopes": [],
+    "preAuthorizedApplications": []
+  },
+  "appRoles": [],
+  …
+}
+```
 
 ## About the code
 
-This Java application is a console application that instantiates an MSAL client, uses it to retrieve an access token for Microsoft Graph, presenting its own credentials. It then uses the access token to call Microsoft graph and return the results of the API call.
+This Java console application instantiates an MSAL client and then uses it to retrieve an access token for Microsoft Graph, presenting its own credentials to do so. It then uses the access token to call Microsoft graph and return the results of the API call.
 
 ## Reporting problems
 
