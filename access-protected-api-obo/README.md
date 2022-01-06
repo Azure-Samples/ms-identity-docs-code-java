@@ -6,7 +6,7 @@ languages:
 - java
 page_type: sample
 name: "Java API written in Spring Boot that both protects its own endpoints and calls Graph on-behalf-of the client."
-description: "This Java API that protects it's own endpoints using JWT scope validation and calls Microsoft Graph on behalf of the client. The code in this sample is used by one or more articles on docs.microsoft.com."
+description: "This Java API that protects its own endpoints using JWT scope validation and calls Microsoft Graph on behalf of the client. The code in this sample is used by one or more articles on docs.microsoft.com."
 products:
 - azure
 - azure-active-directory
