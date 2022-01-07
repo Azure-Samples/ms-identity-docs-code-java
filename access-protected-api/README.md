@@ -21,7 +21,7 @@ urlFragment: ms-identity-docs-code-webapp-java
 ![Build passing.](https://img.shields.io/badge/build-passing-brightgreen.svg) ![Code coverage.](https://img.shields.io/badge/coverage-100%25-brightgreen.svg) ![License.](https://img.shields.io/badge/license-MIT-green.svg)
 -->
 
-This sample demonstrates a Java Spring Boot web API that calls Microsoft Graph as itself, using the Microsoft Authentication Library (MSAL) for Java.
+This Java Spring Boot web API uses the Microsoft Authentication Library (MSAL) for Java to acquire an access token for Microsoft Graph, using its own identity.
 
 ```console
 $ curl http://localhost:8080/api/application
@@ -59,7 +59,7 @@ $ curl http://localhost:8080/api/application
 
 ### 1. Register the app
 
-First, complete the steps in [Register an application with the Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) to register the sample app.
+First, complete the steps in [Configure an application to expose a web API](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis) to register the sample API.
 
 Use these settings in your app registration.
 
@@ -74,7 +74,7 @@ Use these settings in your app registration.
 
 ### 2. Update code sample with app registration values
 
-Open the [_application.yml_](src/main/resources/application.yml) file and modify the three Azure Active Directory configuration properties using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_application.yml_](src/main/resources/application.yml) file and modify the four Azure Active Directory configuration properties using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
 
 ```yaml
 # 'Tenant ID' of your Azure AD instance - this value is a GUID
@@ -106,7 +106,9 @@ mvn spring-boot:run
 
 ## Access the API
 
-Open postman, curl, or similar and make an HTTP GET request to **http://localhost:8080/api/application**. If everything worked, the sample app should produce output similar to this:
+Using Postman, curl, or a similar application, issue an HTTP GET request to *http://localhost:8080/api/application*.
+
+For example, if you use curl and everything worked, the sample you should receive a response from the API similar to this:
 
 ```console
 $ curl http://localhost:8080/api/application
