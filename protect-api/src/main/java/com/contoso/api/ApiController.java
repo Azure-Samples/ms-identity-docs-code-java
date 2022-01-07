@@ -13,6 +13,8 @@ public class ApiController {
     // and also will require that it contains a scope claim of "Greeting.Read"
     // An invalid or missing JWT token will result in a 401, a token without
     // sufficent scope will result in a 403.
+    // The SCOPE_ prefix is a Spring Boot + Azure AD package implementation
+    // detail. There is also a ROLE_ prefix.
     @GetMapping(value = "/hello", produces = "text/plain")
     @PreAuthorize("hasAuthority('SCOPE_Greeting.Read')")
     public String hello() {
