@@ -159,7 +159,9 @@ Graph API call result:
 
 ## About the code
 
-This Java console application instantiates an MSAL client and then uses it to retrieve an access token for Microsoft Graph, presenting its own credentials to do so. It then uses the access token to call Microsoft graph and return the results of the API call.
+This Java console application instantiates an MSAL client and then uses it to retrieve an access token for Microsoft Graph. The application will make a Microsoft Graph request to get information about its own app registration. This is being done via the client credentials OAuth flow, meaning the application is using its own App registration as the credentials to generate the access token for Microsoft Graph. The results of the Microsoft Graph call are then returned as the results of the API call.
+
+No specific Microsoft Graph permissions needed to be assigned to the app registration in the Azure AD portal, because app registrations can access their own records without additional permissions. To access other Microsoft Graph endpoints, the app registration for this API would require additional Microsoft Graph API permissions assigned to it.
 
 ## Reporting problems
 
