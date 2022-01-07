@@ -5,13 +5,16 @@
 languages:
 - java
 page_type: sample
-name: "Java API written in Spring Boot that both calls Microsoft Graph as itself."
-description: "This Java API and calls Microsoft Graph as itself using the Microsoft Authentication Library (MSAL) for Java. The code in this sample is used by one or more articles on docs.microsoft.com."
+name: "Java web API written in Spring Boot that calls Microsoft Graph as itself."
+
+description: "This Java API and calls Microsoft Graph as itself using the Microsoft Authentication Library (MSAL) for Java, msal4j. The code in this sample is used by one or more articles on docs.microsoft.com."
+
 products:
 - azure
 - azure-active-directory
 - ms-graph
-urlFragment: ms-identity-docs-code-webapp-java
+urlFragment: ms-identity-docs-code-webapi-java
+
 ---
 -->
 
@@ -70,11 +73,11 @@ Use these settings in your app registration.
 | **Platform type**              | _None_                                                               | No redirect URI required; don't select a platform.                                          |
 | **Client secret**              | _**Value** of the client secret (not its ID)_                        | :warning: Record this value immediately! <br/> It's shown only _once_ (when you create it). |
 
-> :information_source: **Bold text** in the tables above matches (or is similar to) a UI element in the Azure portal, while `code formatting` indicates a value you enter into a text box in the Azure portal.
+> :information_source: **Bold text** represents a value you select in the Azure portal, while `code formatting` indicates text you enter in the Azure portal.
 
 ### 2. Update code sample with app registration values
 
-Open the [_application.yml_](src/main/resources/application.yml) file and modify the four Azure Active Directory configuration properties using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
+In [_application.yml_](src/main/resources/application.yml), update the Azure AD property values with those from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
 
 ```yaml
 # 'Tenant ID' of your Azure AD instance - this value is a GUID
@@ -130,15 +133,17 @@ $ curl http://localhost:8080/api/application
   "defaultRedirectUri": null,
   "certification": null,
   "optionalClaims": null,
-  …
+  ...
 }
 ```
 
 ## About the code
 
-This Java API uses the Spring Boot web framework. The app has a single, anonymous route. When that route is called, the application will make a Microsoft Graph request to get information about its own app registration. This is being done via the client credentials OAuth flow, meaning the application is using its own App registration as the credentials to generate the access token for Microsoft Graph. The results of the Microsoft Graph call are then returned as the results of the API call.
+This Java web API uses the Spring Boot web framework and has a single route that supports anonymous access. When its anonymous route is called, the API requests its own application object from the Microsoft Graph API.
 
-No specific Microsoft Graph permissions needed to be assigned to the app registration in the Azure AD portal, because app registrations can access their own records without additional permissions. To access other Microsoft Graph endpoints, the app registration for this API would require additional Microsoft Graph API permissions assigned to it.
+The web API uses MSAL for Java to get an access token for Microsoft Graph by using the OAuth 2.0 client credentials flow. That is, this web API (a confidential client) uses the credentials in its app registration (and thus its own identity) when requesting the access token for Microsoft Graph. If its call to the Microsoft Graph API was successful, the Java web API then returns the results to its anonymous caller.
+
+The web API requires no specific Microsoft Graph API permissions because applications registered with Azure Azure AD always have permission to access their own record, or *object*, in Microsoft Graph. To access other Microsoft Graph API endpoints, however, permissions for those endpoints must be added to the web API's registration in Azure AD.
 
 ## Reporting problems
 
