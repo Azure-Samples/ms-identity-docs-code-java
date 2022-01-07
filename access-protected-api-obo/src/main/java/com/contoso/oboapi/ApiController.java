@@ -29,7 +29,9 @@ public class ApiController {
         final String graphAccessToken = graphMsalClient.getAccessToken().getTokenValue();
 
         // Access Microsoft Graph using the access token acquired above. This
-        // application is simply accessing its own App registration record in Azure AD.
+        // application is accessing the "me" endpoint on behalf of the caller. This will
+        // return information about the user identified in the access token, as if the
+        // user ask for it, themselves.
         final WebClient webClient = WebClient.create();
 
         var jsonResultFromGraph = webClient.get()
