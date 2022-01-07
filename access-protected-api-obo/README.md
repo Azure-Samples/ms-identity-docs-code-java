@@ -21,7 +21,7 @@ urlFragment: ms-identity-docs-code-webapp-java
 ![Build passing.](https://img.shields.io/badge/build-passing-brightgreen.svg) ![Code coverage.](https://img.shields.io/badge/coverage-100%25-brightgreen.svg) ![License.](https://img.shields.io/badge/license-MIT-green.svg)
 -->
 
-This sample demonstrates a Java Spring Boot web API that has a JWT-protected protected route that calls Microsoft Graph on behalf of the client, using the Microsoft Authentication Library (MSAL) for Java.
+This Java Spring Boot web API uses the Microsoft Authentication Library (MSAL) for Java to require authorization to access a JWT-protected route, which then calls Microsoft Graph on behalf of the client.
 
 ```console
 $ curl http://localhost:8080/me -H "Authorization: Bearer {valid-access-token}"
@@ -53,7 +53,7 @@ $ curl http://localhost:8080/me -H "Authorization: Bearer {valid-access-token}"
 
 ### 1. Register the app
 
-First, complete the steps in [Register an application with the Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) to register the sample app.
+First, complete the steps in [Configure an application to expose a web API](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis) to register the sample API and expose its scopes.
 
 Use these settings in your app registration.
 
@@ -69,7 +69,7 @@ Use these settings in your app registration.
 
 ### 2. Update code sample with app registration values
 
-Open the [_application.yml_](src/main/resources/application.yml) file and modify the three Azure Active Directory configuration properties using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_application.yml_](src/main/resources/application.yml) file and modify the four Azure Active Directory configuration properties using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
 
 ```yaml
 # 'Tenant ID' of your Azure AD instance - this value is a GUID
@@ -101,10 +101,12 @@ mvn spring-boot:run
 
 ## Access the API
 
-Open postman, curl, or similar and make an HTTP GET request to **http://localhost:8080/me** with an `Authorization` header of `Bearer {valid-access-token}`. If everything worked, the sample app should produce output similar to this:
+Using Postman, curl, or a similar application, issue an HTTP GET request to *http://localhost:8080/me* with an `Authorization` header of `Bearer {VALID-ACCESS-TOKEN}`.
+
+For example, if you use curl and everything worked, the sample you should receive a response from the API similar to this:
 
 ```console
-$ curl http://localhost:8080/me -H "Authorization: Bearer {valid-access-token}"
+$ curl http://localhost:8080/me -H "Authorization: Bearer {VALID-ACCESS-TOKEN}"
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users/$entity",
   "businessPhones": ["+1 (999) 5551001"],
@@ -127,7 +129,11 @@ Follow the instructions in [Gaining consent for the middle-tier application](htt
 
 ## About the code
 
-This Java API uses the Spring Boot web framework. The app has a single route that requires an access token. The access token will be automatically validated by MSAL. A missing or invalid (expired, wrong audience, etc) token will result in a `401` response. A otherwise valid token without the proper scopes will result in a `403` response. A valid token with a proper scope of (`user_impersonation`) will be accepted, and the token will then be used exchanged in an on-behalf-of OAuth flow to call to Microsoft Graph. The results of the Microsoft Graph call are then returned as the results of the API call.
+This Java API uses the Spring Boot web framework. The app has a single route that requires an access token. The access token will be automatically validated by MSAL:
+
+- A missing or invalid (expired, wrong audience, etc) token will result in a `401` response.
+- An otherwise valid token without the proper scope will result in a `403` response.
+- A valid token with the proper scope of `user_impersonation` will be accepted, and the token will then be exchanged in an on-behalf-of OAuth flow to call to Microsoft Graph. The results of the Microsoft Graph call are then returned as the results of the API call.
 
 ## Reporting problems
 
