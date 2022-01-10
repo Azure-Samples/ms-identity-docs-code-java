@@ -5,23 +5,24 @@
 languages:
 - java
 page_type: sample
-name: "Java API written in Spring Boot that both protects its own endpoints and calls Graph on-behalf-of the client."
+name: "Java Spring Boot web API that protects its own endpoints and calls Microsoft Graph on behalf of the client application."
 description: "This Java API that protects its own endpoints using JWT scope validation and calls Microsoft Graph on behalf of the client. The code in this sample is used by one or more articles on docs.microsoft.com."
 products:
 - azure
 - azure-active-directory
 - ms-graph
-urlFragment: ms-identity-docs-code-webapp-java
+urlFragment: ms-identity-docs-code-webapi-java
+
 ---
 -->
 
-# Java Spring Boot | web API | access control (protected routes), protected web API access (Microsoft Graph)  | Microsoft identity platform
+# Java Spring Boot | web API | access control (protected routes), protected web API access (Microsoft Graph) | Microsoft identity platform
 
 <!-- Build badges here
 ![Build passing.](https://img.shields.io/badge/build-passing-brightgreen.svg) ![Code coverage.](https://img.shields.io/badge/coverage-100%25-brightgreen.svg) ![License.](https://img.shields.io/badge/license-MIT-green.svg)
 -->
 
-This Java Spring Boot web API uses the Microsoft Authentication Library (MSAL) for Java to require authorization to access a JWT-protected route, which then calls Microsoft Graph on behalf of the client.
+This Java Spring Boot web API uses the Microsoft Authentication Library (MSAL) for Java to require authorization for clients accessing a JWT-protected route, and then calls Microsoft Graph on behalf of the client.
 
 ```console
 $ curl http://localhost:8080/me -H "Authorization: Bearer {valid-access-token}"
@@ -69,7 +70,7 @@ Use these settings in your app registration.
 
 ### 2. Update code sample with app registration values
 
-Open the [_application.yml_](src/main/resources/application.yml) file and modify the four Azure Active Directory configuration properties using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
+In [_application.yml_](src/main/resources/application.yml), update the following Azure AD configuration properties with the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
 
 ```yaml
 # 'Tenant ID' of your Azure AD instance - this value is a GUID
