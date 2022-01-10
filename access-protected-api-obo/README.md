@@ -11,7 +11,7 @@ products:
 - azure
 - azure-active-directory
 - ms-graph
-urlFragment: ms-identity-docs-code-webapi-java
+urlFragment: ms-identity-docs-code-webapi-obo-java
 
 ---
 -->
@@ -28,16 +28,16 @@ This Java Spring Boot web API uses the Microsoft Authentication Library (MSAL) f
 $ curl http://localhost:8080/me -H "Authorization: Bearer {valid-access-token}"
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users/$entity",
-  "businessPhones": ["+1 (999) 5550001"],
-  "displayName": "Hans Gruber",
-  "givenName": "Hans",
-  "jobTitle": "Boss",
-  "mail": "hgruber@contoso.com",
-  "mobilePhone": "1 999-555-0001",
-  "officeLocation": "Nakatomi Plaza/F30",
+  "businessPhones": ["+1 (999) 5551001"],
+  "displayName": "Contoso Employee",
+  "givenName": "Contoso",
+  "jobTitle": "Worker",
+  "mail": "cemployee@contoso.com",
+  "mobilePhone": "1 999-555-1001",
+  "officeLocation": "Contoso Plaza/F30",
   "preferredLanguage": null,
-  "surname": "Gruber",
-  "userPrincipalName": "hans_gruber@contoso.com",
+  "surname": "Employee",
+  "userPrincipalName": "contoso_employee@contoso.com",
   "id": "e3a49d8b-d849-48eb-9947-37c1f9589812"
 }
 ```
@@ -111,15 +111,15 @@ $ curl http://localhost:8080/me -H "Authorization: Bearer {VALID-ACCESS-TOKEN}"
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users/$entity",
   "businessPhones": ["+1 (999) 5551001"],
-  "displayName": "Hans Gruber",
-  "givenName": "Hans",
-  "jobTitle": "Boss",
-  "mail": "hgruber@contoso.com",
+  "displayName": "Contoso Employee",
+  "givenName": "Contoso",
+  "jobTitle": "Worker",
+  "mail": "cemployee@contoso.com",
   "mobilePhone": "1 999-555-1001",
-  "officeLocation": "Nakatomi Plaza/F30",
+  "officeLocation": "Contoso Plaza/F30",
   "preferredLanguage": null,
-  "surname": "Gruber",
-  "userPrincipalName": "hans_gruber@contoso.com",
+  "surname": "Employee",
+  "userPrincipalName": "contoso_employee@contoso.com",
   "id": "e3a49d8b-d849-48eb-9947-37c1f9589812"
 }
 ```
