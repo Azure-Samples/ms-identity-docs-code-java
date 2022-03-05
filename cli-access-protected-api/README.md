@@ -115,7 +115,7 @@ mvn install
 ## Run the application
 
 ```bash
-mvn exec:java -Dexec.mainClass=com.contoso.cli.App
+mvn exec:java -D exec.mainClass=com.contoso.cli.App
 ```
 
 If everything worked, the sample app should produce output similar to this:
