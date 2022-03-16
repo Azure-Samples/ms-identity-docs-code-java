@@ -48,6 +48,8 @@ public class App {
 
         // Acquire a token from Azure AD for this client to access Microsoft Graph based
         // on the permissions granted this application in its Azure AD App registration.
+        // The client credential flow will automatically attempt to use or renew any cached
+        // tokens, without the need to call acquireTokenSilently first.
         final ClientCredentialParameters parameters = ClientCredentialParameters
                 .builder(Collections.singleton("https://graph.microsoft.com/.default"))
                 .build();

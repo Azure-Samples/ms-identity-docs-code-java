@@ -11,12 +11,12 @@ products:
 - azure
 - azure-active-directory
 - ms-graph
-urlFragment: ms-identity-docs-code-webapp-java
+urlFragment: ms-identity-docs-code-cli-access-protected-api-java
 ---
 -->
 
 # Java | console app | protected web API access (Microsoft Graph) | Microsoft identity platform
-
+<!-- SAMPLE ID: DOCS-CODE-011 -->
 <!-- Build badges here
 ![Build passing.](https://img.shields.io/badge/build-passing-brightgreen.svg) ![Code coverage.](https://img.shields.io/badge/coverage-100%25-brightgreen.svg) ![License.](https://img.shields.io/badge/license-MIT-green.svg)
 -->
