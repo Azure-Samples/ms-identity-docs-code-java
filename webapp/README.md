@@ -15,6 +15,8 @@ urlFragment: ms-identity-docs-code-webapp-java
 ---
 -->
 
+<!-- SAMPLE ID: DOCS-CODE-018 -->
+
 # Java Spring Boot | web app | user sign-in, access control (protected routes), protected web API access (Microsoft Graph) | Microsoft identity platform
 
 <!-- Build badges here
@@ -30,7 +32,7 @@ This sample demonstrates a Java Spring Boot web application that is both protect
 ## Prerequisites
 
 - Azure Active Directory (Azure AD) tenant and the permissions or role required for managing app registrations in the tenant.
-- Java 8+
+- Java 11+
 - Maven
 
 ## Setup

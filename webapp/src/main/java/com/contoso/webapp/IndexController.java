@@ -54,6 +54,7 @@ public class IndexController {
         }
 
         model.addAttribute("jsonBody", responseJson);
+        model.addAttribute("graphAccessTokenExpiresAt", msalGraphClient.getAccessToken().getExpiresAt());
 
         return "graph";
     }
