@@ -32,7 +32,7 @@ This sample demonstrates a Java Spring Boot web application that is both protect
 ## Prerequisites
 
 - Azure Active Directory (Azure AD) tenant and the permissions or role required for managing app registrations in the tenant.
-- Java 8+
+- Java 11+
 - Maven
 
 ## Setup

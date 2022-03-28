@@ -3,13 +3,13 @@ azure:
     base-uri: https://login.microsoftonline.com
 
     # 'Tenant ID' of your Azure AD instance - this value is a GUID
-    tenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+    tenant-id: value-here
 
     # 'Application (client) ID' of app registration in Azure portal - this value is a GUID
-    client-id: 982a029d-4a1e-4054-83a4-a76f5180f600
+    client-id: value-here
 
     # Client secret 'Value' (not its ID) from 'Client secrets' in app registration in Azure portal
-    client-secret: nope
+    client-secret: value-here
     authorization-clients:
       graph:
         scopes:
