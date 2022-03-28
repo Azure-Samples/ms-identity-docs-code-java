@@ -27,6 +27,11 @@ public class ApiController {
         // the API is contacting graph "as itself," not based on the caller. This access
         // token will have whatever permissions have been granted it in the API's App
         // registration in the Azure AD portal.
+        //
+        // This access token comes from the Spring Security token cache, and this line
+        // results in the same access token being used on subsequent invocations of this
+        // API. Nearing access token expiration, the access token will be refreshed by the
+        // Spring Security framework.
         final String graphAccessToken = graphMsalClient.getAccessToken().getTokenValue();
 
         // Access Microsoft Graph using the access token acquired above. This
