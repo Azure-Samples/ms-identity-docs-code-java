@@ -29,6 +29,10 @@
           following:
         </p>
         <p><pre><code class="language-js" th:text="${jsonBody}"></code></pre></p>
+        <p>
+          Refreshing this page will continue to use the cached access token acquired
+          for Microsoft Graph, which expires at <span th:text="${ graphAccessTokenExpiresAt }"></span>".
+          Future page views will attempt to refresh this token as it nears its expiration.</p>
       </div>
       <div>
         <p>

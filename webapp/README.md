@@ -15,6 +15,8 @@ urlFragment: ms-identity-docs-code-webapp-java
 ---
 -->
 
+<!-- SAMPLE ID: DOCS-CODE-008 -->
+
 # Java Spring Boot | web app | user sign-in, access control (protected routes), protected web API access (Microsoft Graph) | Microsoft identity platform
 
 <!-- Build badges here
