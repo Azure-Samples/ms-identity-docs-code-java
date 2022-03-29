@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MSAL Demo</string>
+    <string name="sign_in_text">Sign In</string>
+    <string name="sign_out_text">Sign Out</string>
+    <string name="get_graph_data_text">Get Data From Graph</string>
+    <string name="graph_output_header">Output from Graph:</string>
+    <string name="token_expiration_header">Graph Access Token Expiration:</string>
+    <string name="token_message">Clicking the \"Get data from Graph\" button repeatedly will use the cached access token until it nears expiration, at which point a new access token will be requested.</string>
+</resources>
