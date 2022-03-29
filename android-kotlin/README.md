@@ -33,7 +33,7 @@ This sample demonstrates an Android application written in Kotlin that is both p
 
 - Azure Active Directory (Azure AD) tenant and the permissions or role required for managing app registrations in the tenant.
 - Kotlin 1.6+
-- Android Studio (Bumblebee - 2021.1.1 Patch 2)
+- Android Studio (Bumblebee - 2021.1.1 Patch 2) and an emulator (Android 11+)
 
 ## Setup
 
@@ -93,9 +93,7 @@ Open the [_msal_auth_config.json_](app/src/main/res/raw/msal_auth_config.json) f
 }
 ```
 
-### 3. In Android Studio, Build the project
-
-## In Android Studio, Run the application
+### 3. In Android Studio, Run the application
 
 ## Browse to the application
 
