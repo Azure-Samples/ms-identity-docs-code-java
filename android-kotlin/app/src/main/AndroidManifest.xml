@@ -30,7 +30,7 @@
                 <!-- android:path is the value in the Redirect URI Signature hash on Azure Active Directory.-->
                 <data
                     android:host="com.contoso.kotlinandroidmsal"
-                    android:path="/"
+                    android:path="/<signature hash>"
                     android:scheme="msauth" />
             </intent-filter>
         </activity>
