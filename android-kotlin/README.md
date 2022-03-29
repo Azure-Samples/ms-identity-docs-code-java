@@ -93,7 +93,7 @@ Open the [_msal_auth_config.json_](app/src/main/res/raw/msal_auth_config.json) f
 }
 ```
 
-### 3. In Android Studio, Run the application
+### 3. In Android Studio, run the application
 
 ## Browse to the application
 
