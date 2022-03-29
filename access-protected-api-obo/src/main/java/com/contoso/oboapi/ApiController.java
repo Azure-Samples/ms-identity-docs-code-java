@@ -28,6 +28,10 @@ public class ApiController {
         // populated with an access token using the on-behalf-of flow, which
         // originated with the access token provided to this route with the client's
         // http request.
+        //
+        // This access token came from the Spring Security token cache, which maintains
+        // the on-behalf-of access token, per user-assertion, based on the provided access
+        // token to this API.
         final String graphAccessToken = graphMsalClient.getAccessToken().getTokenValue();
 
         // Access Microsoft Graph using the access token acquired above. This
