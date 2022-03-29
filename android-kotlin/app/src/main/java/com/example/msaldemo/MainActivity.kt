@@ -1,14 +1,20 @@
 package com.example.msaldemo
 
-// Required dependencies
+// Required dependencies for Android
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.microsoft.identity.client.*
-import com.microsoft.identity.client.exception.MsalException
 import android.widget.Button
 import android.widget.TextView
+
+// Required dependencies for MSAL
+import com.microsoft.identity.client.*
+import com.microsoft.identity.client.exception.MsalException
+
+// Required dependencies for Volley - Used for making HTTP requests to Graph
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+
+// Required dependency for working with JSON objects
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_main)
 
+        // Creates a Public Application using MSAL configuration for single account access
         PublicClientApplication.createSingleAccountPublicClientApplication(
             this,
             R.raw.msal_auth_config,
@@ -46,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnRemoveAccount.setOnClickListener{
+            // Sign the user out
             msalApplication!!.signOut(object :
                 ISingleAccountPublicClientApplication.SignOutCallback {
                 override fun onSignOut() {
@@ -60,6 +68,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnCallGraph.setOnClickListener{
+            // Attempt to use a token from the cache.
+            // If it has expired, a new token will be requested.
             msalApplication!!.acquireTokenSilentAsync(
                 arrayOf("user.read"),
                 authority,
@@ -78,8 +88,9 @@ class MainActivity : AppCompatActivity() {
         if (msalApplication == null) {
             return
         }
-
-        msalApplication!!.getCurrentAccountAsync(object :
+        
+        // Gets the current signed in account and notifies if the account changes
+         msalApplication!!.getCurrentAccountAsync(object :
             ISingleAccountPublicClientApplication.CurrentAccountCallback {
             override fun onAccountLoaded(activeAccount: IAccount?) {
                 updateUI(activeAccount)
@@ -99,6 +110,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getAuthInteractiveCallback(): AuthenticationCallback {
+        // Callback passed with token acquisition.
+        // Will either return a successful token or an exception
         return object : AuthenticationCallback {
             override fun onSuccess(authenticationResult: IAuthenticationResult) {
                 updateUI(authenticationResult.account)
@@ -116,26 +129,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun callGraphAPI(authenticationResult: IAuthenticationResult) {
-            val queue = Volley.newRequestQueue(this)
-            val request = object : JsonObjectRequest(
-                Method.GET, "https://graph.microsoft.com/v1.0/me",
-                JSONObject(),
-                { response ->
-                    val txtLog: TextView = findViewById(R.id.txt_log)
-                    txtLog.text = response.toString()
-                    val tokenExpiration: TextView = findViewById(R.id.token_expiration)
-                    tokenExpiration.text = authenticationResult.expiresOn.toString()
-                },
-                { error ->
-                    displayError(error)
-                }) {
-                override fun getHeaders(): MutableMap<String, String> {
-                    val headers = HashMap<String, String>()
-                    headers["Authorization"] = "Bearer "+authenticationResult.accessToken
-                    return headers
-                }
+        // Using Volley, make an HTTP GET request to Graph
+        // Include the accessToken from the authenticationResult in the
+        // HTTP header in the request to Graph
+        val queue = Volley.newRequestQueue(this)
+        val request = object : JsonObjectRequest(
+            Method.GET, "https://graph.microsoft.com/v1.0/me",
+            JSONObject(),
+            { response ->
+                val txtLog: TextView = findViewById(R.id.txt_log)
+                txtLog.text = response.toString()
+                val tokenExpiration: TextView = findViewById(R.id.token_expiration)
+                tokenExpiration.text = authenticationResult.expiresOn.toString()
+            },
+            { error ->
+                displayError(error)
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Authorization"] = "Bearer "+authenticationResult.accessToken
+                return headers
             }
-            queue.add(request)
+        }
+        queue.add(request)
     }
 
     private fun displayError(exception: Exception) {
