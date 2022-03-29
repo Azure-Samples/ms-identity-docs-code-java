@@ -25,7 +25,7 @@ urlFragment: ms-identity-docs-code-android-kotlin
 
 This sample demonstrates an Android application written in Kotlin that is both protected by Microsoft identity platform and accesses Microsoft Graph as the user by using the Microsoft Authentication Library (MSAL).
 
-![A browser screenshot on a page showing a response from Microsoft Graph](./app.png)
+![A screenshot showing the sample application running on an Android emulator.](./app.png)
 
 > :page_with_curl: This sample application backs one or more technical articles on docs.microsoft.com. <!-- TODO: Link to first tutorial in series when published. -->
 
@@ -99,7 +99,7 @@ Open the [_msal_auth_config.json_](app/src/main/res/raw/msal_auth_config.json) f
 
 If everything worked, the sample app should produce output similar to this:
 
-![A browser screenshot showing the weclome page to the sample application.](./app.png)
+![A screenshot showing the sample application running on an Android emulator.](./app.png)
 
 ## About the code
 
