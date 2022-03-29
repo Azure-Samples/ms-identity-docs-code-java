@@ -101,7 +101,7 @@ Open the [_msal_auth_config.json_](app/src/main/res/raw/msal_auth_config.json) f
 
 If everything worked, the sample app should produce output similar to this:
 
-![A browser screenshot showing the weclome page to the sample application.](./aop.png)
+![A browser screenshot showing the weclome page to the sample application.](./app.png)
 
 ## About the code
 
