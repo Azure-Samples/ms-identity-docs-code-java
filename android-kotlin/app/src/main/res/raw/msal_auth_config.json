@@ -1,0 +1,16 @@
+{
+  "client_id" : "<client_id>",
+  "authorization_user_agent" : "DEFAULT",
+  "redirect_uri" : "<redirect_uri>",
+  "account_mode" : "SINGLE",
+  "broker_redirect_uri_registered": true,
+  "authorities" : [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADMyOrg",
+        "tenant_id": "<tenant_id>"
+      }
+    }
+  ]
+}
