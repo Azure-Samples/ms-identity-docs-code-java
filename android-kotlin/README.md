@@ -109,7 +109,7 @@ This sample demonstrates how to obtain a token and make a call to the Graph API 
 
 ### Sample app not working?
 
-If you can't get the sample working, you've checked [Stack Overflow](http://stackoverflow.com/questions/tagged/msal), and you've already searched the issues in this sample's repository, open an issue report the problem.
+If you can't get the sample working, you've checked [Stack Overflow](https://stackoverflow.com/questions/tagged/msal), and you've already searched the issues in this sample's repository, open an issue report the problem.
 
 1. Search the [GitHub issues](../issues) in the repository - your problem might already have been reported or have an answer.
 1. Nothing similar? [Open an issue](../issues/new) that clearly explains the problem you're having running the sample app.
