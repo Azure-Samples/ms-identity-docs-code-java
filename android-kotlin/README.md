@@ -69,7 +69,7 @@ Open the [_AndroidManifest.xml_](app/src/main/AndroidManifest.xml) file and modi
 android:path="/<signature hash>"
 ```
 
-Open the [_msal_auth_config.json_](app/src/main/AndroidManifest.xml) file and modify the Azure Active Directory configuration property using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_msal_auth_config.json_](app/src/main/res/raw/msal_auth_config.json) file and modify the Azure Active Directory configuration property using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ```json
 // <client_id> is the 'Application (client) ID' of app registration in Azure portal - this value is a GUID
