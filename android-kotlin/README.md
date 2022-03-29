@@ -103,7 +103,7 @@ If everything worked, the sample app should produce output similar to this:
 
 ## About the code
 
-Coming soon
+This sample demonstrates how to obtain a token and make a call to the Graph API in Single Account Mode.  The MSAL library is used to request authentication via a SingleAccountPublicClientApplication.  Once the user is authenticated, an HTTP request to Graph is issued by way of Volley.  The results of the call to Graph are displayed in the application.
 
 ## Reporting problems
 
