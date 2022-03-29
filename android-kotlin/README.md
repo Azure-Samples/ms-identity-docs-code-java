@@ -73,24 +73,13 @@ Open the [_msal_auth_config.json_](app/src/main/res/raw/msal_auth_config.json) f
 
 ```json
 // <client_id> is the 'Application (client) ID' of app registration in Azure portal - this value is a GUID
+"client_id" : "<client_id>",
+
 // <redirect_uri> is the 'Redirect URI' of app registration in Azure portal
+"redirect_uri" : "<redirect_uri>",
+
 // <tenant_id> is the' Directory (tenant) ID' of app registration in Azure portal - this value is a GUID
-{
-  "client_id" : "<client_id>",
-  "authorization_user_agent" : "DEFAULT",
-  "redirect_uri" : "<redirect_uri>",
-  "account_mode" : "SINGLE",
-  "broker_redirect_uri_registered": true,
-  "authorities" : [
-    {
-      "type": "AAD",
-      "audience": {
-        "type": "AzureADMyOrg",
-        "tenant_id": "<tenant_id>"
-      }
-    }
-  ]
-}
+"tenant_id": "<tenant_id>"
 ```
 
 ### 3. In Android Studio, run the application
