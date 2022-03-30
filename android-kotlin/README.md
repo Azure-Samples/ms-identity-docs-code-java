@@ -54,14 +54,6 @@ Use these settings in your app registration.
 
 ### 2. Update code sample with app registration values
 
-Open the [_MainActivity.kt_](app/src/main/java/com/example/msaldemo/MainActivity.kt) file and modify the Azure Active Directory configuration property using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
-
-```yaml
-// Full directory URL, in the form of https://login.microsoftonline.com/<tenant>
-val authority = ""
-```
-
-
 Open the [_AndroidManifest.xml_](app/src/main/AndroidManifest.xml) file and modify the Azure Active Directory configuration property using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ```yaml
