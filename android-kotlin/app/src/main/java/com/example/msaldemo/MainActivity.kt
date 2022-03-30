@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         btnSignIn.setOnClickListener{
             // Sign the user into the device
-            msalApplication!!.signIn(this, "", arrayOf("user.read"), getAuthInteractiveCallback())
+            msalApplication!!.signIn(this, "", arrayOf("user.read"), getAuthCallback())
         }
 
         btnRemoveAccount.setOnClickListener{
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             msalApplication!!.acquireTokenSilentAsync(
                 arrayOf("user.read"),
                 "https://login.microsoftonline.com/$tenantId",
-                getAuthInteractiveCallback()
+                getAuthCallback()
             )
         }
     }
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun getAuthInteractiveCallback(): AuthenticationCallback {
+    private fun getAuthCallback(): AuthenticationCallback {
         // Callback passed with token acquisition.
         // Will either return a successful token or an exception
         return object : AuthenticationCallback {
