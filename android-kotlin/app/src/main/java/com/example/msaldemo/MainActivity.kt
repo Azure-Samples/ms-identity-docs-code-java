@@ -45,10 +45,11 @@ class MainActivity : AppCompatActivity() {
         val btnRemoveAccount: Button = findViewById(R.id.btn_signOut)
         val btnCallGraph: Button = findViewById(R.id.btn_callGraph)
 
-        // Full directory URL, in the form of https://login.microsoftonline.com/<tenant>
-        val authority = ""
+        val msalConfig = resources.openRawResource(R.raw.msal_auth_config).bufferedReader().use { it.readText() }
+        val tenantId = JSONObject(msalConfig).getJSONArray("authorities").getJSONObject(0).getJSONObject("audience")["tenant_id"]
 
         btnSignIn.setOnClickListener{
+            // Sign the user into the device
             msalApplication!!.signIn(this, "", arrayOf("user.read"), getAuthInteractiveCallback())
         }
 
@@ -69,10 +70,10 @@ class MainActivity : AppCompatActivity() {
 
         btnCallGraph.setOnClickListener{
             // Attempt to use a token from the cache.
-            // If it has expired, a new token will be requested.
+            // If the token has expired, a new token will be requested.
             msalApplication!!.acquireTokenSilentAsync(
                 arrayOf("user.read"),
-                authority,
+                "https://login.microsoftonline.com/$tenantId",
                 getAuthInteractiveCallback()
             )
         }
@@ -88,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         if (msalApplication == null) {
             return
         }
-        
+
         // Gets the current signed in account and notifies if the account changes
          msalApplication!!.getCurrentAccountAsync(object :
             ISingleAccountPublicClientApplication.CurrentAccountCallback {
