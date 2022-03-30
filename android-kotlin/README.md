@@ -74,9 +74,9 @@ Open the [_msal_auth_config.json_](app/src/main/res/raw/msal_auth_config.json) f
 "tenant_id": "<tenant_id>"
 ```
 
-### 3. In Android Studio, run the application
+### 3. Run the application
 
-## Browse to the application
+In Android Studio, press `Shift` + `F10` or select _Run 'app'_ from the navigation menu.
 
 If everything worked, the sample app should produce output similar to this:
 
