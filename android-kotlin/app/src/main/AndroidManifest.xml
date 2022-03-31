@@ -29,7 +29,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- android:path is the value in the Redirect URI Signature hash on Azure Active Directory.-->
                 <data
-                    android:host="com.contoso.kotlinandroidmsal"
+                    android:host="com.example.msaldemo"
                     android:path="/<signature hash>"
                     android:scheme="msauth" />
             </intent-filter>
