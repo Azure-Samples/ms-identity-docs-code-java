@@ -45,10 +45,6 @@ class MainActivity : AppCompatActivity() {
         val btnRemoveAccount: Button = findViewById(R.id.btn_signOut)
         val btnCallGraph: Button = findViewById(R.id.btn_callGraph)
 
-        // Read the config file (msal_auth_config.json) and extract the Tenant ID
-        val msalConfig = resources.openRawResource(R.raw.msal_auth_config).bufferedReader().use { it.readText() }
-        val tenantId = JSONObject(msalConfig).getJSONArray("authorities").getJSONObject(0).getJSONObject("audience")["tenant_id"]
-
         btnSignIn.setOnClickListener{
             // Sign the user into the device
             msalApplication!!.signIn(this, "", arrayOf("user.read"), getAuthCallback())
@@ -74,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             // If the token has expired, a new token will be requested.
             msalApplication!!.acquireTokenSilentAsync(
                 arrayOf("user.read"),
-                "https://login.microsoftonline.com/$tenantId",
+                msalApplication!!.configuration.defaultAuthority.authorityUri.toString(),
                 getAuthCallback()
             )
         }
