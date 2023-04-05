@@ -1,0 +1,15 @@
+{
+  "client_id": "Enter_client_id",
+  "authorization_user_agent": "DEFAULT",
+  "redirect_uri": "Enter_redirect_uri",
+  "account_mode" : "SINGLE",
+  "authorities": [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADMyOrg",
+        "tenant_id": "Enter_tenant_id"
+      }
+    }
+  ]
+}
