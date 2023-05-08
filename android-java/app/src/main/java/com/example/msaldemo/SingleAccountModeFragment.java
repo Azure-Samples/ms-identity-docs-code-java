@@ -185,7 +185,15 @@ public class SingleAccountModeFragment extends Fragment {
                  * Once you've signed the user in,
                  * you can perform acquireTokenSilent to obtain resources without interrupting the user.
                  */
-                mSingleAccountApp.acquireTokenSilentAsync(getScopes(), mAccount.getAuthority(), getAuthSilentCallback());
+                final AcquireTokenSilentParameters silentParameters = new AcquireTokenSilentParameters.Builder()
+                        .forAccount(AcquireTokenTestHelper.getAccount())
+                        .withScopes(Arrays.asList(mScopes))
+                        .forceRefresh(false)
+                        .fromAuthority(getAuthority())
+                        .withCallback(AcquireTokenTestHelper.successfulSilentCallback())
+                        .build();
+
+               mSingleAccountApp.acquireTokenSilentAsync(silentParameters);
             }
         });
 
