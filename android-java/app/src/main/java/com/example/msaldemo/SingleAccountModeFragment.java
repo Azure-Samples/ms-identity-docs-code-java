@@ -162,7 +162,15 @@ public class SingleAccountModeFragment extends Fragment {
                  *  - the resource you're acquiring a token for has a stricter set of requirement than your Single Sign-On refresh token.
                  *  - you're introducing a new scope which the user has never consented for.
                  */
-                mSingleAccountApp.acquireToken(getActivity(), getScopes(), getAuthInteractiveCallback());
+                final AcquireTokenParameters acquireTokenParameters = new AcquireTokenParameters.Builder()
+                        .startAuthorizationFromActivity(mActivity)
+                        .withLoginHint(username)
+                        .withScopes(Arrays.asList(mScopes))
+                        .fromAuthority(getAuthority())
+                        .withCallback(AcquireTokenTestHelper.successfulInteractiveCallback())
+                        .build();
+
+                mSingleAccountApp.acquireToken(acquireTokenParameters);
             }
         });
 
