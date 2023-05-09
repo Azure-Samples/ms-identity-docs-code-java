@@ -1,20 +1,17 @@
-<!-- Keeping yaml frontmatter commented out for now
 ---
 # Metadata required by https://docs.microsoft.com/samples/browse/
 # Metadata properties: https://review.docs.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
 languages:
 - java
 page_type: sample
-name: "Java Spring Boot web API that protects its own endpoints and calls Microsoft Graph on behalf of the client application."
-description: "This Java API that protects its own endpoints using JWT scope validation and calls Microsoft Graph on behalf of the client. The code in this sample is used by one or more articles on docs.microsoft.com."
+name: Java Spring Boot web API that protects its own endpoints and calls Microsoft Graph on behalf of the client application.
+description: This Java API that protects its own endpoints using JWT scope validation and calls Microsoft Graph on behalf of the client. The code in this sample is used by one or more articles on docs.microsoft.com.
 products:
 - azure
 - azure-active-directory
 - ms-graph
 urlFragment: ms-identity-docs-code-webapi-obo-java
-
 ---
--->
 
 <!-- SAMPLE ID: DOCS-CODE-014 -->
 
