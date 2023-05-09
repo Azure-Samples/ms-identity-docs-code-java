@@ -4,9 +4,9 @@
 languages:
 - java
 page_type: sample
-name: "Java web API written in Spring Boot that calls Microsoft Graph as itself."
+name: Java web API written in Spring Boot that calls Microsoft Graph as itself.
 
-description: "This Java API and calls Microsoft Graph as itself using the Microsoft Authentication Library (MSAL) for Java, msal4j. The code in this sample is used by one or more articles on docs.microsoft.com."
+description: This Java API and calls Microsoft Graph as itself using the Microsoft Authentication Library (MSAL) for Java, msal4j. The code in this sample is used by one or more articles on docs.microsoft.com.
 
 products:
 - azure
