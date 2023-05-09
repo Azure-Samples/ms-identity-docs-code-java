@@ -1,4 +1,3 @@
-<!-- Keeping yaml frontmatter commented out for now
 ---
 # Metadata required by https://docs.microsoft.com/samples/browse/
 # Metadata properties: https://review.docs.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
@@ -13,10 +12,9 @@ products:
 - azure
 - azure-active-directory
 - ms-graph
-urlFragment: ms-identity-docs-code-webapi-java
-
+urlFragment: ms-identity-docs-code-access-protected-webapi-java
 ---
--->
+
 
 <!-- SAMPLE ID: DOCS-CODE-008 -->
 # Java Spring Boot | web API | web API that access a protected web API (Microsoft Graph)  | Microsoft identity platform
