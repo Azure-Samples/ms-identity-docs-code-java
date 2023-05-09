@@ -1,18 +1,16 @@
-<!-- Keeping yaml frontmatter commented out for now
 ---
 # Metadata required by https://docs.microsoft.com/samples/browse/
 # Metadata properties: https://review.docs.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
 languages:
 - java
 page_type: sample
-name: "Java API written in Spring Boot that both protects its own endpoints"
-description: "This Java API that protects its own endpoints using JWT scope validation. The code in this sample is used by one or more articles on docs.microsoft.com."
+name: Java API written in Spring Boot that both protects its own endpoints
+description: This Java API that protects its own endpoints using JWT scope validation. The code in this sample is used by one or more articles on docs.microsoft.com.
 products:
 - azure
 - azure-active-directory
-urlFragment: ms-identity-docs-code-webapp-java
+urlFragment: ms-identity-docs-code-protect-api-java
 ---
--->
 
 # Java Spring Boot | web API | access control (protected routes) | Microsoft identity platform
 
