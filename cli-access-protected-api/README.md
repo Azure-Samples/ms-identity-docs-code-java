@@ -1,19 +1,18 @@
-<!-- Keeping yaml frontmatter commented out for now
+
 ---
 # Metadata required by https://docs.microsoft.com/samples/browse/
 # Metadata properties: https://review.docs.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
 languages:
 - java
 page_type: sample
-name: "Java console application written that accesses Microsoft Graph as itself"
-description: "This Java console application contacts Microsoft Graph as itself. The code in this sample is used by one or more articles on docs.microsoft.com."
+name: Java console application written that accesses Microsoft Graph as itself
+description: This Java console application contacts Microsoft Graph as itself. The code in this sample is used by one or more articles on docs.microsoft.com.
 products:
 - azure
 - azure-active-directory
 - ms-graph
 urlFragment: ms-identity-docs-code-cli-access-protected-api-java
 ---
--->
 
 # Java | console app | protected web API access (Microsoft Graph) | Microsoft identity platform
 <!-- SAMPLE ID: DOCS-CODE-011 -->
