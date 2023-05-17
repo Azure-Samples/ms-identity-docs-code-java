@@ -1,0 +1,15 @@
+{
+  "client_id" : "00001111-aaaa-bbbb-3333-cccc4444",
+  "authorization_user_agent" : "DEFAULT",
+  "redirect_uri" : "msauth://com.azuresamples.msalandroiddemo/00001111%cccc4444%3D",
+  "account_mode" : "SINGLE",
+  "authorities" : [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADandPersonalMicrosoftAccount",
+        "tenant_id": "common"
+      }
+    }
+  ]
+}
