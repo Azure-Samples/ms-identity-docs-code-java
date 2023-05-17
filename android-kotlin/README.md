@@ -1,19 +1,17 @@
-<!-- Keeping yaml frontmatter commented out for now
 ---
 # Metadata required by https://docs.microsoft.com/samples/browse/
 # Metadata properties: https://review.docs.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
 languages:
 - kotlin
 page_type: sample
-name: "Android application written in Kotlin that enables a user to sign in and make a request to Microsoft Graph"
-description: "This Android application written in Kotlin enables a user to sign in and make a request to Microsoft Graph. The code in this sample is used by one or more articles on docs.microsoft.com."
+name: Android application written in Kotlin that enables a user to sign in and make a request to Microsoft Graph
+description: This Android application written in Kotlin enables a user to sign in and make a request to Microsoft Graph. The code in this sample is used by one or more articles on docs.microsoft.com.
 products:
 - azure
 - azure-active-directory
 - ms-graph
 urlFragment: ms-identity-docs-code-android-kotlin
 ---
--->
 
 <!-- SAMPLE ID: DOCS-CODE-034 -->
 

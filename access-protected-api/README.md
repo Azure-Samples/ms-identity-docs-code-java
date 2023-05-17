@@ -1,22 +1,20 @@
-<!-- Keeping yaml frontmatter commented out for now
 ---
 # Metadata required by https://docs.microsoft.com/samples/browse/
 # Metadata properties: https://review.docs.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
 languages:
 - java
 page_type: sample
-name: "Java web API written in Spring Boot that calls Microsoft Graph as itself."
+name: Java web API written in Spring Boot that calls Microsoft Graph as itself.
 
-description: "This Java API and calls Microsoft Graph as itself using the Microsoft Authentication Library (MSAL) for Java, msal4j. The code in this sample is used by one or more articles on docs.microsoft.com."
+description: This Java API and calls Microsoft Graph as itself using the Microsoft Authentication Library (MSAL) for Java, msal4j. The code in this sample is used by one or more articles on docs.microsoft.com.
 
 products:
 - azure
 - azure-active-directory
 - ms-graph
-urlFragment: ms-identity-docs-code-webapi-java
-
+urlFragment: ms-identity-docs-code-access-protected-webapi-java
 ---
--->
+
 
 <!-- SAMPLE ID: DOCS-CODE-008 -->
 # Java Spring Boot | web API | web API that access a protected web API (Microsoft Graph)  | Microsoft identity platform
