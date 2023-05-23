@@ -1,3 +1,26 @@
+// Copyright (c) Microsoft Corporation.
+// All rights reserved.
+//
+// This code is licensed under the MIT License.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files(the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and / or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions :
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
 package com.example.msaldemo;
 
 import android.os.Bundle;
@@ -111,14 +134,7 @@ public class SingleAccountModeFragment extends Fragment {
                     return;
                 }
 
-                final SignInParameters signInParameters = SignInParameters.builder()
-                        .withActivity(getActivity())
-                        .withLoginHint(null)
-                        .withScopes(getScopes)
-                        .withCallback(getAuthInteractiveCallback())
-                        .build();
-                
-                mSingleAccountApp.signIn(signInParameters);
+                mSingleAccountApp.signIn(getActivity(), null, getScopes(), getAuthInteractiveCallback());
             }
         });
 
@@ -162,15 +178,7 @@ public class SingleAccountModeFragment extends Fragment {
                  *  - the resource you're acquiring a token for has a stricter set of requirement than your Single Sign-On refresh token.
                  *  - you're introducing a new scope which the user has never consented for.
                  */
-                final AcquireTokenParameters acquireTokenParameters = new AcquireTokenParameters.Builder()
-                        .startAuthorizationFromActivity(mActivity)
-                        .withLoginHint(username)
-                        .withScopes(Arrays.asList(mScopes))
-                        .fromAuthority(getAuthority())
-                        .withCallback(AcquireTokenTestHelper.successfulInteractiveCallback())
-                        .build();
-
-                mSingleAccountApp.acquireToken(acquireTokenParameters);
+                mSingleAccountApp.acquireToken(getActivity(), getScopes(), getAuthInteractiveCallback());
             }
         });
 
@@ -185,15 +193,7 @@ public class SingleAccountModeFragment extends Fragment {
                  * Once you've signed the user in,
                  * you can perform acquireTokenSilent to obtain resources without interrupting the user.
                  */
-                final AcquireTokenSilentParameters silentParameters = new AcquireTokenSilentParameters.Builder()
-                        .forAccount(AcquireTokenTestHelper.getAccount())
-                        .withScopes(Arrays.asList(mScopes))
-                        .forceRefresh(false)
-                        .fromAuthority(getAuthority())
-                        .withCallback(AcquireTokenTestHelper.successfulSilentCallback())
-                        .build();
-
-               mSingleAccountApp.acquireTokenSilentAsync(silentParameters);
+                mSingleAccountApp.acquireTokenSilentAsync(getScopes(), mAccount.getAuthority(), getAuthSilentCallback());
             }
         });
 
