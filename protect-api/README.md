@@ -1,11 +1,11 @@
 ---
-# Metadata required by https://docs.microsoft.com/samples/browse/
-# Metadata properties: https://review.docs.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
+# Metadata required by https://learn.microsoft.com/samples/browse/
+# Metadata properties: https://review.learn.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
 languages:
 - java
 page_type: sample
 name: Java API written in Spring Boot that both protects its own endpoints
-description: This Java API that protects its own endpoints using JWT scope validation. The code in this sample is used by one or more articles on docs.microsoft.com.
+description: This Java API that protects its own endpoints using JWT scope validation. The code in this sample is used by one or more articles on learn.microsoft.com.
 products:
 - azure
 - azure-active-directory
@@ -29,7 +29,7 @@ Hello, world. You were able to access this because you provided a valid access t
 
 ## Prerequisites
 
-- Azure Active Directory (Azure AD) tenant and the permissions or role required for managing app registrations in the tenant.
+- A Microsoft Entra ID tenant and the permissions or role required for managing app registrations in the tenant.
 - Java 8+
 - Maven
 
@@ -37,7 +37,7 @@ Hello, world. You were able to access this because you provided a valid access t
 
 ### 1. Register the app
 
-First, complete the steps in [Configure an application to expose a web API](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis) to register the sample API and expose its scopes.
+First, complete the steps in [Configure an application to expose a web API](https://learn.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis) to register the sample API and expose its scopes.
 
 Use these settings in your app registration.
 
@@ -48,19 +48,19 @@ Use these settings in your app registration.
 | **Platform type**              | _None_                                                               | No redirect URI required; don't select a platform.                               |
 | **Scopes defined by this API** | **Scope name**: `Greeting.Read`<br/>**Who can consent?**: **Admins and users**<br/>**Admin consent display name**: `Read API Greetings`<br/>**Admin consent description**: `Allows the user to see greetings from the API.`<br/>**User consent display name**: `Read API Greetings`<br/>**User consent description**: `Allows you to see greetings from the API.`<br/>**State**: **Enabled** | Required scope for this sample. |
 
-> :information_source: **Bold text** in the tables above matches (or is similar to) a UI element in the Azure portal, while `code formatting` indicates a value you enter into a text box in the Azure portal.
+> :information_source: **Bold text** in the tables above matches (or is similar to) a UI element in the Microsoft Entra admin center, while `code formatting` indicates a value you enter into a text box in the Microsoft Entra admin center.
 
 ### 2. Update code sample with app registration values
 
-Open the [_application.yml_](src/main/resources/application.yml) file and modify the three Azure Active Directory configuration properties using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
+Open the [_application.yml_](src/main/resources/application.yml) file and modify the three Microsoft Entra ID configuration properties using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
 
 
 ```yaml
-# 'Tenant ID' of your Azure AD instance - this value is a GUID
-tenant-id: value-here
+# 'Tenant ID' of your Microsoft Entra ID instance - this value is a GUID
+tenant-id: Enter_the_Tenant_ID_Here
 
-# 'Application ID URI' of app registration in Azure portal - this value typically starts with api://
-app-id-uri: value-here
+# 'Application ID URI' of app registration in the Microsoft Entra admin center - this value typically starts with api://
+app-id-uri: Enter_the_Application_ID_URI_Here
 ```
 
 ### 3. Install package(s) and compile application
@@ -111,7 +111,7 @@ If you can't get the sample working, you've checked [Stack Overflow](http://stac
 
 > :warning: WARNING: Any issue in this repository _not_ limited to running one of its sample apps will be closed without being addressed.
 
-For all other requests, see [Support and help options for developers | Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options).
+For all other requests, see [Support and help options for developers | Microsoft identity platform](https://learn.microsoft.com/azure/active-directory/develop/developer-support-help-options).
 
 ## Contributing
 
