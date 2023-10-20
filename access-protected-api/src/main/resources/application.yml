@@ -2,17 +2,17 @@ azure:
   activeDirectory:
     base-uri: https://login.microsoftonline.com
 
-    # 'Tenant ID' of your Azure AD instance - this value is a GUID
-    tenant-id: value-here
+    # 'Tenant ID' of your Microsoft Entra ID instance - this value is a GUID
+    tenant-id: Enter_the_Tenant_ID_Here
 
-    # 'Application (client) ID' of app registration in Azure portal - this value is a GUID
-    client-id: value-here
+    # 'Application (client) ID' of app registration in the Microsoft Entra admin center - this value is a GUID
+    client-id: Enter_the_Application_Id_Here
 
-    # Client secret 'Value' (not its ID) from 'Client secrets' in app registration in Azure portal
-    client-secret: value-here
+    # Client secret 'Value' (not its ID) from 'Client secrets' in app registration in Microsoft Entra admin center
+    client-secret: Enter_the_Client_Secret_Value_Here
 
-    # 'Object ID' of app registration in Azure portal - this value is a GUID
-    client-object-id: value-here
+    # 'Object ID' of app registration in Microsoft Entra admin center - this value is a GUID
+    client-object-id: Enter_the_Client_Object_ID_Here
 
     authorization-clients:
       graph:
