@@ -8,7 +8,7 @@ azure:
     # 'Application ID URI' of app registration in the Microsoft Entra admin center - this value typically starts with api://
     app-id-uri: Enter_the_Application_ID_URI_Here
 
-    # 'Application (client) ID' of app registration in he Microsoft Entra admin center - this value is a GUID
+    # 'Application (client) ID' of app registration in the Microsoft Entra admin center - this value is a GUID
     client-id: Enter_the_Application_Id_Here
 
     # Client secret 'Value' (not its ID) from 'Client secrets' in app registration in he Microsoft Entra admin center
