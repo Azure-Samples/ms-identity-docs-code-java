@@ -76,7 +76,7 @@ public class SingleAccountModeFragment extends Fragment {
     TextView currentUserTextView;
     TextView deviceModeTextView;
 
-    /* Azure AD Variables */
+    /* Microsoft Entra ID Variables */
     private ISingleAccountPublicClientApplication mSingleAccountApp;
     private IAccount mAccount;
 
