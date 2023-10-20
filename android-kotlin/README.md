@@ -1,11 +1,11 @@
 ---
-# Metadata required by https://docs.microsoft.com/samples/browse/
-# Metadata properties: https://review.docs.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
+# Metadata required by https://learn.microsoft.com/samples/browse/
+# Metadata properties: https://review.learn.microsoft.com/help/contribute/samples/process/onboarding?branch=main#add-metadata-to-readme
 languages:
 - kotlin
 page_type: sample
 name: Android application written in Kotlin that enables a user to sign in and make a request to Microsoft Graph
-description: This Android application written in Kotlin enables a user to sign in and make a request to Microsoft Graph. The code in this sample is used by one or more articles on docs.microsoft.com.
+description: This Android application written in Kotlin enables a user to sign in and make a request to Microsoft Graph. The code in this sample is used by one or more articles on learn.microsoft.com.
 products:
 - azure
 - azure-active-directory
@@ -25,11 +25,11 @@ This sample demonstrates an Android application written in Kotlin that is both p
 
 ![A screenshot showing the sample application running on an Android emulator.](./app.png)
 
-> :page_with_curl: This sample application backs one or more technical articles on docs.microsoft.com. <!-- TODO: Link to first tutorial in series when published. -->
+> :page_with_curl: This sample application backs one or more technical articles on learn.microsoft.com. <!-- TODO: Link to first tutorial in series when published. -->
 
 ## Prerequisites
 
-- Azure Active Directory (Azure AD) tenant and the permissions or role required for managing app registrations in the tenant.
+- A Microsoft Entra ID tenant and the permissions or role required for managing app registrations in the tenant.
 - Kotlin 1.6+
 - Android Studio (Bumblebee - 2021.1.1 Patch 2) and an emulator (Android 11+)
 
@@ -37,7 +37,7 @@ This sample demonstrates an Android application written in Kotlin that is both p
 
 ### 1. Register the app
 
-First, complete the steps in [Register an application with the Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) to register the sample app.
+First, complete the steps in [Register an application with the Microsoft identity platform](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app) to register the sample app.
 
 Use these settings in your app registration.
 
@@ -48,28 +48,25 @@ Use these settings in your app registration.
 | **Platform type**              | **Android**                                                                  | Required value for this sample. <br/> Enables the required and optional settings for the app type. |
 | **Configure your Android app** | **Package Name**: `com.example.msaldemo`<br/>**Signature Hash**: _Use provided value_ <br/>**Redirect URI**: _Use provided value_                                                      | Package name is required for this sample, other values are optional and can be changed at any time.  Record these values for use in Android application.                                                                    |
 
-> :information_source: **Bold text** in the tables above matches (or is similar to) a UI element in the Azure portal, while `code formatting` indicates a value you enter into a text box in the Azure portal.
+> :information_source: **Bold text** in the tables above matches (or is similar to) a UI element in the Microsoft Entra admin center, while `code formatting` indicates a value you enter into a text box in the Microsoft Entra admin center.
 
 ### 2. Update code sample with app registration values
 
-Open the [_AndroidManifest.xml_](app/src/main/AndroidManifest.xml) file and modify the Azure Active Directory configuration property using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_AndroidManifest.xml_](app/src/main/AndroidManifest.xml) file and modify the Microsoft Entra ID configuration property using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ```yaml
-<!-- android:path is the value in the Redirect URI Signature hash on Azure Active Directory.-->
+<!-- android:path is the value in the Redirect URI Signature hash on Microsoft Entra ID.-->
 android:path="/<signature hash>"
 ```
 
-Open the [_msal_auth_config.json_](app/src/main/res/raw/msal_auth_config.json) file and modify the Azure Active Directory configuration property using the values from your [app's registration in the Azure portal](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_msal_auth_config.json_](app/src/main/res/raw/msal_auth_config.json) file and modify the Microsoft Entra ID configuration property using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ```json
-// <client_id> is the 'Application (client) ID' of app registration in Azure portal - this value is a GUID
-"client_id" : "<client_id>",
-
-// <redirect_uri> is the 'Redirect URI' of app registration in Azure portal
-"redirect_uri" : "<redirect_uri>",
-
-// <tenant_id> is the' Directory (tenant) ID' of app registration in Azure portal - this value is a GUID
-"tenant_id": "<tenant_id>"
+"client_id": "Enter_the_Application_Id_Here",
+...
+"redirect_uri": "Enter_the_Redirect_URI_Here",
+...
+"tenant_id": "Enter_the_Tenant_ID_Here"
 ```
 
 ### 3. Run the application
@@ -97,7 +94,7 @@ If you can't get the sample working, you've checked [Stack Overflow](https://sta
 
 > :warning: WARNING: Any issue in this repository _not_ limited to running one of its sample apps will be closed without being addressed.
 
-For all other requests, see [Support and help options for developers | Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options).
+For all other requests, see [Support and help options for developers | Microsoft identity platform](https://learn.microsoft.com/azure/active-directory/develop/developer-support-help-options).
 
 ## Contributing
 
