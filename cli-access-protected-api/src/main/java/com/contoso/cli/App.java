@@ -31,7 +31,7 @@ public class App {
 
     public static void main(String[] args) throws IOException {
 
-        // All of your Azure AD configurations are stored in the application.properties
+        // All of your Microsoft Entra ID configurations are stored in the application.properties
         // file. Load those up for easy access.
         final Properties properties = new Properties();
         properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("application.properties"));
@@ -39,15 +39,15 @@ public class App {
         // This scenario uses a confidential client application MSAL client. The
         // lifecycle of this client should be scoped to the application's lifecycle
         // as it contains a token and metadata cache that will prevent unnecessary
-        // requests to Azure AD on subsequent usage.
+        // requests to Microsoft Entra ID on subsequent usage.
         final ConfidentialClientApplication msalClient = ConfidentialClientApplication.builder(
                 properties.getProperty("client-id"),
                 ClientCredentialFactory.createFromSecret(properties.getProperty("client-secret")))
                 .authority(properties.getProperty("authority"))
                 .build();
 
-        // Acquire a token from Azure AD for this client to access Microsoft Graph based
-        // on the permissions granted this application in its Azure AD App registration.
+        // Acquire a token from Microsoft Entra ID for this client to access Microsoft Graph based
+        // on the permissions granted this application in its Microsoft Entra ID App registration.
         // The client credential flow will automatically attempt to use or renew any cached
         // tokens, without the need to call acquireTokenSilently first.
         final ClientCredentialParameters parameters = ClientCredentialParameters
@@ -58,7 +58,7 @@ public class App {
         final String graphAccessToken = tokenResult.accessToken();
 
         // Access Microsoft Graph using the access token acquired above. This
-        // application is simply accessing its own App registration record in Azure AD.
+        // application is simply accessing its own App registration record in Microsoft Entra ID.
         final HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(
                         "https://graph.microsoft.com/v1.0/applications/" + properties.getProperty("client-object-id")))
