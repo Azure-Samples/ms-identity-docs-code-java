@@ -45,7 +45,7 @@ $ curl http://localhost:8080/me -H "Authorization: Bearer {valid-access-token}"
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant and the permissions or role required for managing app registrations in the tenant.
+- A Microsoft Entra tenant and the permissions or role required for managing app registrations in the tenant.
 - Java 8+
 - Maven
 

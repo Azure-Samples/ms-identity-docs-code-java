@@ -31,7 +31,7 @@ This sample demonstrates an Android application written in Java that is both pro
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant and the permissions or role required for managing app registrations in the tenant.
+- A Microsoft Entra tenant and the permissions or role required for managing app registrations in the tenant.
 - Java
 - Android Studio (Bumblebee - 2021.1.1 Patch 2) and an emulator (Android 11+)
 
@@ -54,14 +54,14 @@ Use these settings in your app registration.
 
 ### 2. Update code sample with app registration values
 
-Open the [_AndroidManifest.xml_](app/src/main/AndroidManifest.xml) file and modify the Microsoft Entra ID configuration property using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_AndroidManifest.xml_](app/src/main/AndroidManifest.xml) file and modify the Microsoft Entra configuration property using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ```yaml
 <!-- android:path is the value in the Redirect URI Signature hash on Microsoft Entra ID.-->
 android:path="/<signature hash>"
 ```
 
-Open the [_auth_config_single_account_.json_](app/src/main/res/raw/auth_config_single_account.json) file and modify the Microsoft Entra ID configuration property using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_auth_config_single_account_.json_](app/src/main/res/raw/auth_config_single_account.json) file and modify the Microsoft Entra  configuration property using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ```json
 "client_id": "Enter_the_Application_Id_Here",

@@ -29,7 +29,7 @@ Hello, world. You were able to access this because you provided a valid access t
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant and the permissions or role required for managing app registrations in the tenant.
+- A Microsoft Entra tenant and the permissions or role required for managing app registrations in the tenant.
 - Java 8+
 - Maven
 
@@ -52,11 +52,11 @@ Use these settings in your app registration.
 
 ### 2. Update code sample with app registration values
 
-Open the [_application.yml_](src/main/resources/application.yml) file and modify the three Microsoft Entra ID configuration properties using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
+Open the [_application.yml_](src/main/resources/application.yml) file and modify the three Microsoft Entra configuration properties using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
 
 
 ```yaml
-# 'Tenant ID' of your Microsoft Entra ID instance - this value is a GUID
+# 'Tenant ID' of your Microsoft Entra instance - this value is a GUID
 tenant-id: Enter_the_Tenant_ID_Here
 
 # 'Application ID URI' of app registration in the Microsoft Entra admin center - this value typically starts with api://

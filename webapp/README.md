@@ -29,7 +29,7 @@ This sample demonstrates a Java Spring Boot web application that is both protect
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant and the permissions or role required for managing app registrations in the tenant.
+- A Microsoft Entra tenant and the permissions or role required for managing app registrations in the tenant.
 - Java 11+
 - Maven
 
@@ -60,10 +60,10 @@ Use these settings in your Enterprise Application for this sample app.
 
 ### 2. Update code sample with app registration values
 
-Open the [_application.yml_](src/main/resources/application.yml) file and modify the three Microsoft Entra ID configuration properties using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_application.yml_](src/main/resources/application.yml) file and modify the three Microsoft Entra configuration properties using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ```yaml
-# 'Tenant ID' of your Microsoft Entra ID instance - this value is a GUID
+# 'Tenant ID' of your Microsoft Entra instance - this value is a GUID
 tenant-id: Enter_the_Tenant_ID_Here
 
 # 'Application (client) ID' of app registration in the Microsoft Entra admin center - this value is a GUID
@@ -97,7 +97,7 @@ Open your browser and navigate to **http://localhost:8080**. If everything worke
 
 This Java web application uses the Spring Boot web framework. The app has three routes, each requiring a different authentication/authorization level.
 
-When a signed-out user navigates to a route requiring authentication, their browser is redirected to the Microsoft Entra ID sign-in page. After signing in, and if they've not previously done so, the user is asked to consent to the app's request for permission to access their data.
+When a signed-out user navigates to a route requiring authentication, their browser is redirected to the Microsoft Entra sign-in page. After signing in, and if they've not previously done so, the user is asked to consent to the app's request for permission to access their data.
 
 ## Reporting problems
 

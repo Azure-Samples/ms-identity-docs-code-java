@@ -19,7 +19,7 @@ public class ApiController {
     // and also will require that it contains a scope claim of "user_impersonation"
     // An invalid or missing JWT token will result in a 401, a token without
     // sufficent scope will result in a 403.
-    // The SCOPE_ prefix is a Spring Boot + Microsoft Entra ID package implementation
+    // The SCOPE_ prefix is a Spring Boot + Microsoft Entra package implementation
     // detail. There is also a ROLE_ prefix.
     @GetMapping(value = "/me")
     @PreAuthorize("hasAuthority('SCOPE_user_impersonation')")

@@ -29,7 +29,7 @@ This sample demonstrates an Android application written in Kotlin that is both p
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant and the permissions or role required for managing app registrations in the tenant.
+- A Microsoft Entra tenant and the permissions or role required for managing app registrations in the tenant.
 - Kotlin 1.6+
 - Android Studio (Bumblebee - 2021.1.1 Patch 2) and an emulator (Android 11+)
 
@@ -52,7 +52,7 @@ Use these settings in your app registration.
 
 ### 2. Update code sample with app registration values
 
-Open the [_AndroidManifest.xml_](app/src/main/AndroidManifest.xml) file and modify the Microsoft Entra ID configuration property using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_AndroidManifest.xml_](app/src/main/AndroidManifest.xml) file and modify the Microsoft Entra configuration property using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ```yaml
 <!-- android:path is the value in the Redirect URI Signature hash on Microsoft Entra ID.-->

@@ -61,7 +61,7 @@ Graph API call result:
 
 ## Prerequisites
 
-- A Microsoft Entra ID tenant and the permissions or role required for managing app registrations in the tenant.
+- A Microsoft Entra tenant and the permissions or role required for managing app registrations in the tenant.
 - Java 11+
 - Maven
 
@@ -84,7 +84,7 @@ Use these settings in your app registration.
 
 ### 2. Update code sample with app registration values
 
-Open the [_application.properties_](src/main/resources/application.properties) file and modify the four Microsoft Entra ID configuration properties using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Open the [_application.properties_](src/main/resources/application.properties) file and modify the four Microsoft Entra configuration properties using the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 ```ini
 # Typically https://login.microsoftonline.com/tenant-id-or-primary-domain/
