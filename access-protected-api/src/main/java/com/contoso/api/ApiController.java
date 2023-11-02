@@ -26,7 +26,7 @@ public class ApiController {
         // populated with an access token using the client credential flow. This means
         // the API is contacting graph "as itself," not based on the caller. This access
         // token will have whatever permissions have been granted it in the API's App
-        // registration in the Azure AD portal.
+        // registration in the Microsoft Entra admin center.
         //
         // This access token comes from the Spring Security token cache, and this line
         // results in the same access token being used on subsequent invocations of this
@@ -35,7 +35,7 @@ public class ApiController {
         final String graphAccessToken = graphMsalClient.getAccessToken().getTokenValue();
 
         // Access Microsoft Graph using the access token acquired above. This
-        // application is simply accessing its own App registration record in Azure AD.
+        // application is simply accessing its own App registration record in Microsoft Entra ID. 
         var jsonResultFromGraph = WebClient.create().get()
                 .uri("https://graph.microsoft.com/v1.0/applications/" + myAppRegistrationObjectId)
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + graphAccessToken)

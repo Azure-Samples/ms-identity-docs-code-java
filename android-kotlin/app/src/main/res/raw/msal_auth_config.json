@@ -1,7 +1,7 @@
 {
-  "client_id" : "<client_id>",
+  "client_id" : "Enter_the_Application_Id_Here",
   "authorization_user_agent" : "DEFAULT",
-  "redirect_uri" : "<redirect_uri>",
+  "redirect_uri" : "Enter_the_Redirect_URI_Here",
   "account_mode" : "SINGLE",
   "broker_redirect_uri_registered": true,
   "authorities" : [
@@ -9,7 +9,7 @@
       "type": "AAD",
       "audience": {
         "type": "AzureADMyOrg",
-        "tenant_id": "<tenant_id>"
+        "tenant_id": "Enter_the_Tenant_ID_Here"
       }
     }
   ]

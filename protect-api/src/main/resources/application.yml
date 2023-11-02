@@ -2,11 +2,11 @@ azure:
   activeDirectory:
     base-uri: https://login.microsoftonline.com
 
-    # 'Tenant ID' of your Azure AD instance - this value is a GUID
-    tenant-id: value-here
+    # 'Tenant ID' of your Microsoft Entra instance - this value is a GUID
+    tenant-id: Enter_the_Tenant_ID_Here
 
-    # 'Application ID URI' of app registration in Azure portal - this value typically starts with api://
-    app-id-uri: value-here
+    # 'Application ID URI' of app registration in the Microsoft Entra admin center - this value typically starts with api://
+    app-id-uri: Enter_the_Application_ID_URI_Here
 
     # This application is performing the OAuth role of only a resource server.
     application-type: resource_server
