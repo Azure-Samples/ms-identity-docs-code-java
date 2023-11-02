@@ -142,7 +142,7 @@ This Java web API uses the Spring Boot web framework and has a single route that
 
 The web API uses MSAL for Java to get an access token for Microsoft Graph by using the OAuth 2.0 client credentials flow. That is, this web API (a confidential client) uses the credentials in its app registration (and thus its own identity) when requesting the access token for Microsoft Graph. If its call to the Microsoft Graph API was successful, the Java web API then returns the results to its anonymous caller.
 
-The web API requires no specific Microsoft Graph API permissions because applications registered with Microsoft Entra ID always have permission to access their own record, or *object*, in Microsoft Graph. To access other Microsoft Graph API endpoints, however, permissions for those endpoints must be added to the web API's registration in Microsoft Entra ID.
+The web API requires no specific Microsoft Graph API permissions because applications registered with Microsoft Entra always have permission to access their own record, or *object*, in Microsoft Graph. To access other Microsoft Graph API endpoints, however, permissions for those endpoints must be added to the web API's registration in Microsoft Entra.
 
 ## Reporting problems
 

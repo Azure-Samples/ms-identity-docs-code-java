@@ -72,7 +72,7 @@ Use these settings in your app registration.
 In [_application.yml_](src/main/resources/application.yml), update the following Microsoft Entra admin center configuration properties with the values from your [app's registration in the Microsoft Entra admin center](https://learn.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
 
 ```yaml
-# 'Tenant ID' of your Microsoft Entra ID instance - this value is a GUID
+# 'Tenant ID' of your Microsoft Entra instance - this value is a GUID
 tenant-id: Enter_the_Tenant_ID_Here
 
 # 'Application ID URI' of app registration in the Microsoft Entra admin center - this value typically starts with api://
