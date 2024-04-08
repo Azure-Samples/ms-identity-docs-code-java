@@ -24,9 +24,9 @@ user@console:~$ mvn exec:java -Dexec.mainClass=com.contoso.cli.App
 Graph API call result:
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
-  "id": "00000000-0000-0000-0000-000000000000",
+  "id": 00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
   "deletedDateTime": null,
-  "appId": "00000000-0000-0000-0000-000000000000",
+  "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "applicationTemplateId": null,
   "disabledByMicrosoftStatus": null,
   "createdDateTime": "2021-11-11T20:57:247",
@@ -120,9 +120,9 @@ If everything worked, the sample app should produce output similar to this:
 Graph API call result:
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
-  "id": "00000000-0000-0000-0000-000000000000",
+  "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
   "deletedDateTime": null,
-  "appId": "00000000-0000-0000-0000-000000000000",
+  "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "applicationTemplateId": null,
   "disabledByMicrosoftStatus": null,
   "createdDateTime": "2021-11-11T20:57:247",

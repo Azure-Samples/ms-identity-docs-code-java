@@ -29,12 +29,12 @@ This Java Spring Boot web API uses the Microsoft Authentication Library (MSAL) f
 $ curl http://localhost:8080/api/application
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
-  "id": "04487cab-91cf-46d8-b4ed-1a428388bdd2",
-  "appId": "de5dcdc6-8dfe-4048-aff6-c615dea4ee3d",
+  "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+  "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "displayName": "java-api",
   "description": null,
   "groupMembershipClaims": null,
-  "identifierUris": ["api://de5dcdc6-8dfe-4048-aff6-c615dea4ee3d"],
+  "identifierUris": ["api://00001111-aaaa-2222-bbbb-3333cccc4444"],
   "isDeviceOnlyAuthSupported": null,
   "isFallbackPublicClient": null,
   "notes": null,
@@ -116,12 +116,12 @@ For example, if you use curl and everything worked, the sample you should receiv
 $ curl http://localhost:8080/api/application
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
-  "id": "04487cab-91cf-46d8-b4ed-1a428388bdd2",
-  "appId": "de5dcdc6-8dfe-4048-aff6-c615dea4ee3d",
+  "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+  "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "displayName": "java-api",
   "description": null,
   "groupMembershipClaims": null,
-  "identifierUris": ["api://de5dcdc6-8dfe-4048-aff6-c615dea4ee3d"],
+  "identifierUris": ["api://00001111-aaaa-2222-bbbb-3333cccc4444"],
   "isDeviceOnlyAuthSupported": null,
   "isFallbackPublicClient": null,
   "notes": null,
