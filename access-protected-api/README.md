@@ -29,12 +29,12 @@ This Java Spring Boot web API uses the Microsoft Authentication Library (MSAL) f
 $ curl http://localhost:8080/api/application
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
-  "id": "04487cab-91cf-46d8-b4ed-1a428388bdd2",
-  "appId": "de5dcdc6-8dfe-4048-aff6-c615dea4ee3d",
+  "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+  "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "displayName": "java-api",
   "description": null,
   "groupMembershipClaims": null,
-  "identifierUris": ["api://de5dcdc6-8dfe-4048-aff6-c615dea4ee3d"],
+  "identifierUris": ["api://00001111-aaaa-2222-bbbb-3333cccc4444"],
   "isDeviceOnlyAuthSupported": null,
   "isFallbackPublicClient": null,
   "notes": null,
@@ -116,12 +116,12 @@ For example, if you use curl and everything worked, the sample you should receiv
 $ curl http://localhost:8080/api/application
 {
   "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applications/$entity",
-  "id": "04487cab-91cf-46d8-b4ed-1a428388bdd2",
-  "appId": "de5dcdc6-8dfe-4048-aff6-c615dea4ee3d",
+  "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+  "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
   "displayName": "java-api",
   "description": null,
   "groupMembershipClaims": null,
-  "identifierUris": ["api://de5dcdc6-8dfe-4048-aff6-c615dea4ee3d"],
+  "identifierUris": ["api://00001111-aaaa-2222-bbbb-3333cccc4444"],
   "isDeviceOnlyAuthSupported": null,
   "isFallbackPublicClient": null,
   "notes": null,
@@ -142,7 +142,7 @@ This Java web API uses the Spring Boot web framework and has a single route that
 
 The web API uses MSAL for Java to get an access token for Microsoft Graph by using the OAuth 2.0 client credentials flow. That is, this web API (a confidential client) uses the credentials in its app registration (and thus its own identity) when requesting the access token for Microsoft Graph. If its call to the Microsoft Graph API was successful, the Java web API then returns the results to its anonymous caller.
 
-The web API requires no specific Microsoft Graph API permissions because applications registered with Microsoft Entra always have permission to access their own record, or *object*, in Microsoft Graph. To access other Microsoft Graph API endpoints, however, permissions for those endpoints must be added to the web API's registration in Microsoft Entra.
+The web API requires no specific Microsoft Graph API permissions because applications registered with Microsoft Entra ID always have permission to access their own record, or *object*, in Microsoft Graph. To access other Microsoft Graph API endpoints, however, permissions for those endpoints must be added to the web API's registration in Microsoft Entra.
 
 ## Reporting problems
 
