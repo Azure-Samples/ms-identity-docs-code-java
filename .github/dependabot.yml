@@ -23,7 +23,7 @@ updates:
       - "/android-java"
       - "/android-kotlin"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     labels:
       - "dependabot"
       - "dependencies"
