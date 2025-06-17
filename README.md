@@ -1,16 +1,9 @@
 # Microsoft identity platform product documentation backing code
 
-This repo contains code used to directly support the product documentation for the [Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/). It is a mono-repo that contains all of the referenced tutorials relating to java-based implementations using the [Microsoft Authentication Library for Java](https://github.com/AzureAD/microsoft-authentication-library-for-java).
+This sample has been archived and is no longer being maintained. You can find a more recent version of this sample [here](https://github.com/Azure-Samples/ms-identity-msal-java-samples)
 
-## Content
+For access to the project files, please visit the branch `main`.
 
-This repo contains the following code to directly support the product docs:
+## Disclaimer
 
-* Coming Soon!
-
-## Resources
-
-- [Microsoft identity platform product documentation](https://docs.microsoft.com/azure/active-directory/develop/)
-- [Microsoft Authentication Library (MSAL) documentation](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)
-- [Microsoft Authentication Library for Java](https://github.com/AzureAD/microsoft-authentication-library-for-java)
-- [Microsoft Entra Spring Boot Starter client library for Java](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/spring/azure-spring-boot-starter-active-directory)
+The sample in this repository is no longer maintained and is kept for historical reasons. The sample in the main branch is not guaranteed to work with the latest versions of the libraries it depends on.
